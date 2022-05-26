@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="html://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo}"></title>
+</head>
+<body>
+    <h1>Datos del tipo Pojo</h1>
+    <p th:text="${usuario.nombre}"></p>
+    <p th:text="${usuario.apellidoPaterno}"></p>
+    <p th:text="${usuario.apellidoMaterno}"></p>
+    <p th:if="${usuario.email !=null}">
+        <span th:text="${usuario.email}"></span>
+    </p>
+    <p th:if="${usuario.email ==null}">
+        <span th:text="'No Tienes un email '"></span>
+    </p>
+
+    
+</body>
+</html>

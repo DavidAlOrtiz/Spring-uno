@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>request Paramas</title>
+</head>
+<body>
+    <h1>enviando parametros desde el hrf</h1>
+    <a th:href="@{/parametros/mixto(saludo='Hola juan', numero = 7)}">Ir a juan</a>
+    <br>
+    <a th:href="@{/parametros/mixto(saludo='Otro parametro', numero = 9)}">Otro paramerto</a>
+    <br>
+    <a th:href="@{/parametros/request(saludo='Otro parametro', numero = 9)}">Ruta del request</a>
+    <br>
+    <a th:href="@{/parametros/request(saludo='Otro parametro', numero = 9)}">Ruta del request  dos</a>
+</body>
+</html>

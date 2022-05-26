@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Mostrar</title>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+    body{
+        margin: 0%;
+    }
+    .dark-primary-color    { background: #00796B; }
+    .default-primary-color { background: #3F51B5; }
+    .light-primary-color   { background: #C5CAE9; }
+    .text-primary-color    { color: #FFFFFF; }
+    .accent-color          { background: #8BC34A; }
+    .primary-text-color    { color: #212121; }
+    .secondary-text-color  { color: #757575; }
+    .divider-color         { border-color: #BDBDBD; }
+    .divMain{
+        
+    }
+    .myCard{
+        max-width: 40%;
+        
+    }
+    .gridCard{
+        margin-bottom: 10px;
+    }
+    .letra{
+       
+        font-size: 12px;
+    }
+    .butonV{
+        margin-left: 19px;
+    }
+    .btnAdd{
+      position: fixed;
+      text-align: left;
+      right: 30px;
+      bottom: 40px;
+    }
+
+    </style>
+</head>
+<body>
+    
+    <div class="divMain ">
+        <header class="mdc-top-app-bar dark-primary-color ">
+            <div class="mdc-top-app-bar__row">
+              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+                <span class="mdc-top-app-bar__title">lista de usuairos</span>
+              </section>
+              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+                
+              </section>
+            </div>
+        </header>
+    </div>
+    <br><br><br><br>
+    <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+         
+          <div  th:each="persona : ${usuarios}"  class="mdc-layout-grid__cell--span-4">
+            <div class="mdc-card demo-card">
+              <div class="mdc-card__primary-action demo-card__primary-action" tabindex="0">
+                <div class="mdc-card__media mdc-card__media--square demo-card__media" style="background-image: url(&quot;https://th.bing.com/th/id/OIP.nJmp0GrgC5KZ_-oMEQtL7wHaHa?pid=ImgDet&rs=1&quot;);"></div>
+                <div class="demo-card__primary">
+                  <h2 class="demo-card__title mdc-typography mdc-typography--headline6"><span th:text="${persona}"></span><span></span></h2>
+                  <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">Chalan</h3>
+                </div>
+                <div class="demo-card__secondary mdc-typography mdc-typography--body2">Correo:<span th:text="${persona.email}"></span></div>
+              </div>
+              <div class="mdc-card__actions">
+                <div class="mdc-card__action-buttons">
+                  <button class="mdc-button mdc-card__action mdc-card__action--button">
+                    <div class="mdc-button__ripple accent-color"></div>
+                    <span class="mdc-button__label text-primary-color letra ">Editar</span>
+                  </button>
+                  <button class="mdc-button mdc-card__action mdc-card__action--button">
+                    <div class="mdc-button__ripple accent-color"></div>
+                    <span class="mdc-button__label text-primary-color letra ">Eliminar</span>
+                  </button>
+                </div>
+                
+                <div class="mdc-card__action-icons">
+                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="Share" data-mdc-ripple-is-unbounded="true">share</button>
+                  <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="More options" data-mdc-ripple-is-unbounded="true">more_vert</button>
+                </div>
+              </div>
+            </div> 
+            <!--
+            <div class="gridCard">
+                <div class="mdc-card ">
+                    <div class="mdc-card__primary-action">
+                      <div class="mdc-card__media mdc-card__media--square"  style="background-image: url(https://th.bing.com/th/id/OIP.0lcuAsQ0V1GwktjPc0SUlgHaG4?pid=ImgDet&rs=1)">
+                        <div class="mdc-card__media-content"></div>
+                      </div>
+                    
+                      <div class="mdc-card__ripple"></div>
+                    </div>
+                    <div class="mdc-card__actions">
+                      <div class="mdc-card__action-buttons butonV">
+                        <button class="mdc-button mdc-card__action mdc-card__action--button">
+                          <div class="mdc-button__ripple accent-color"></div>
+                          <span class="mdc-button__label text-primary-color letra " th:text="${persona}">}</span>
+                        </button>
+                       
+                      </div>
+                      <div class="mdc-card__action-icons">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">favorite</button>
+                        
+                      </div>
+                    </div>
+                </div>
+            </div>
+            -->
+
+          </div>
+
+
+
+          <div class="btnAdd ">
+            <button class="mdc-fab mdc-fab--extended accent-color ">
+              <div class="mdc-fab__ripple"></div>
+              <span class="material-icons mdc-fab__icon">add</span>
+              <span class="mdc-fab__label">Agregar</span>
+            </button>
+          </div>
+        </div>
+    </div>
+
+    
+
+   
+    <!--Tablas
+    <h1 class="dark-primary-color " >
+        <span class="text-primary-color">Listado de usuarios</span>
+    </h1>
+    <div class="mdc-data-table ">
+        <div class="mdc-data-table__table-container">
+            <table  class="mdc-data-table__table" aria-label="Dessert calories">
+                <thead>
+                    <tr class="mdc-data-table__header-row">
+                        <th class="mdc-data-table__header-cell" role="columnheader" scope="col">NOMBRE</th>
+                        <th class="mdc-data-table__header-cell" role="columnheader" scope="col">A PATERNO</th>
+                        <th class="mdc-data-table__header-cell" role="columnheader" scope="col">A MATERNO</th>
+                        <th class="mdc-data-table__header-cell" role="columnheader" scope="col">A EMAIL</th>
+                    </tr>
+
+                </thead>
+                <tbody class="mdc-data-table__content">
+                    <tr th:each="persona : ${usuarios}" class="mdc-data-table__row">
+                        <th class="mdc-data-table__cell" scope="row" th:text="${persona.nombre}">Juan</th>
+                        <td class="mdc-data-table__cell mdc-data-table__cell--numeric "  th:text="${persona.apellidoPaterno}">juan2</td>
+                        <td th:text="${persona.apellidoMaterno}" class="mdc-data-table__cell mdc-data-table__cell--numeric">4.0</td>
+                        <td class="mdc-data-table__cell" th:text="${persona.email}">Email</td>
+                      </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div th:each="persona : ${usuarios}" class="myCardDv">
+        <div class="mdc-card myCard">
+            <div class="mdc-card__primary-action">
+                <div class="mdc-card__media mdc-card__media--square"
+                 style="background-image: url(https://th.bing.com/th/id/OIP.0lcuAsQ0V1GwktjPc0SUlgHaG4?pid=ImgDet&rs=1)">
+                    
+                </div>
+            </div>
+            <div class="mdc-card__actions">
+                <div class="mdc-card__actions-buttons">
+                    Hola <span class="" th:text="${persona.nombre}"></span>
+                </div>
+            </div>
+
+            <div class="mdc-card__action-icons">
+               <div class="mdc-card__action-icons">
+                   <button class="material-icons mdc-icon-button mdc-card__action
+                   mdc-card__action--icon">more_vert</button>
+               </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <h1>Listado de usuarios</h1>
+    <div th:if="${usuarios.size()==0}"> 
+        No existe ningun usuario en la lista
+    </div>
+
+    <div th:if="${usuarios != null and !usuarios.isEmpty()}">
+        <table>
+          <tr>
+            <th>Nombre:</th>
+            <th>Apellido:</th>
+            <th>Email:</th>
+            <th>Telefono:</th>
+          </tr>
+          <tr th:each="persona : ${usuarios}">
+              <td th:text="${persona.nombre}">n</td>
+              <td th:text="${persona.apellidoPaterno}">k</td>
+              <td th:text="${persona.apellidoMaterno}">lk</td>
+              <td th:text="${persona.email}">lk</td>
+          </tr>
+        </table>
+      </div>
+  -->
+
+</body>
+</html>
